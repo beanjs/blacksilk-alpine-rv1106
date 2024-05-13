@@ -1,0 +1,8 @@
+commit 5b3d5452688ef203337aab9762228e7b11cd4ea3
+Author: Zhihua Wang <hogan.wang@rock-chips.com>
+Date:   Thu Aug 3 15:11:35 2023 +0800
+
+    [venc] md: support hardware downscale
+    
+    Signed-off-by: Zhihua Wang <hogan.wang@rock-chips.com>
+    Change-Id: I06de86f6109724bec5a3828312df6d6f16a65d4d

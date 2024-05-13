@@ -1,0 +1,8 @@
+commit d4f898704722e6713f10876f39aa2121f9219477
+Author: LongChang Ma <chad.ma@rock-chips.com>
+Date:   Tue Jul 4 11:35:10 2023 +0800
+
+    [vvi]: optimize vi node info struct and create node api.
+    
+    Signed-off-by: LongChang Ma <chad.ma@rock-chips.com>
+    Change-Id: I644ddd7d548f7417c3d03ea2b048db8e9eb79714

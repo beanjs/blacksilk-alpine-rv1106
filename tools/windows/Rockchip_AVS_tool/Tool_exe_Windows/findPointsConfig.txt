@@ -1,0 +1,9 @@
+srcPath: ./findPoints/camera0_01_000.yuv
+dstPath: ./findPoints/camera0_01_000.jpg
+boardWidth: 15                                               //number of chessboard corners in horizontal direction
+boardHeight: 8                                               //number of chessboard corners in vertical direction
+squareSize: 30                                               //size of chessboard(mm)
+imageWidth: 1920                                             //image width
+imageHeight: 1080                                            //image height
+imageStride: 1920                                            //image stride
+imageFormat: 2                                               //0-gray、1-rgb、2-yuv

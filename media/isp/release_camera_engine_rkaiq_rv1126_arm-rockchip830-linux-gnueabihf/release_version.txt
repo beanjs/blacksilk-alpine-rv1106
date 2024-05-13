@@ -1,0 +1,8 @@
+commit 069d4dca04ac169449774c61df07db7393e468b4
+Author: Xu Hongfei <xuhf@rock-chips.com>
+Date:   Wed Jul 12 15:59:26 2023 +0800
+
+    rkisp_demo: fixed searching the wrong path of aiq header files
+    
+    Signed-off-by: Xu Hongfei <xuhf@rock-chips.com>
+    Change-Id: Ia29bda92b4f09e3f3730ccfe173d21e4c9710638

@@ -1,0 +1,19 @@
+leftImagePath: ./calibProduct/src/left.yuv
+rightImagePath: ./calibProduct/src/right.yuv
+dstPath: ./calibProduct/rk_calib_result/
+calibTorrentPath: ./calibProduct/src/rk_2_camera_result.xml
+cameraNum: 2                                                 //camera number（2）
+cameraType: 1                                                //0-pinhole、1-omn、2-fisheye
+cameraFov: 120                                               //horizontal fov
+boardWidth: 15                                               //number of chessboard corners in horizontal direction
+boardHeight: 8                                              //number of chessboard corners in vertical direction
+squareSize: 30                                               //size of chessboard(mm)
+leftImageWidth: 1920                                         // camera0 image width
+leftImageHeight: 1080                                        // camera0 image height
+leftImageStride: 1920                                        // camera0 image stride
+rightImageWidth: 1920                                        // camera1 image width
+rightImageHeight: 1080                                       // camera1 image height
+rightImageStride: 1920                                       // camera1 image stride
+imageFormat: 2                                               //0-gray、1-rgb、2-yuv
+isSaveCornersImage: 1                                        //draw corners and save
+useAccurateMode: 1                                        	 //optimize by stitch

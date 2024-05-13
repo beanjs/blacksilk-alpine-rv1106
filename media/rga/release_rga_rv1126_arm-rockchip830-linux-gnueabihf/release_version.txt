@@ -1,0 +1,8 @@
+commit a1b05b8fcf4698176477370fd942b31d9ae66404
+Author: Yu Qiaowei <cerf.yu@rock-chips.com>
+Date:   Tue Nov 29 20:07:56 2022 +0800
+
+    build: fix cmake-android.sh can't compile
+    
+    Signed-off-by: Yu Qiaowei <cerf.yu@rock-chips.com>
+    Change-Id: I70d822a4bb639680fc1a369a9fc39047fe350c61

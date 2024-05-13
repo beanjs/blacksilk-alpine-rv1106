@@ -1,0 +1,8 @@
+commit 64e135b0732cb9a29393596e9a79ad0d99ba8c4a
+Author: Yandong Lin <yandong.lin@rock-chips.com>
+Date:   Wed Aug 23 16:30:44 2023 +0800
+
+    [h265e_api]: fix h265 cfg change not clear issue
+    
+    Signed-off-by: Yandong Lin <yandong.lin@rock-chips.com>
+    Change-Id: Iaede68d935e786194dd9733f8179c9adb70ce803

@@ -1,0 +1,135 @@
+name: Sololinker Firmware build
+  
+on:
+  workflow_dispatch:
+  
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+          
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        lunch_option: [0, 1, 2]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          autoconf \
+          automake \
+          autopoint \
+          autotools-dev \
+          binutils \
+          bison \
+          build-essential \
+          ca-certificates \
+          ccache \
+          chrpath \
+          cmake \
+          cmake-data \
+          codesearch \
+          command-not-found \
+          console-setup \
+          coreutils \
+          cpio \
+          cpp \
+          cpp-8 \
+          cpp-9 \
+          device-tree-compiler \
+          dosfstools \
+          f2fs-tools \
+          fakeroot \
+          flex \
+          g++ \
+          g++-9 \
+          gawk \
+          gcc \
+          gcc-10-cross-base \
+          gcc-8 \
+          gcc-9 \
+          gcc-9-cross-base \
+          genext2fs \
+          gettext \
+          gettext-base \
+          ghostscript \
+          lz4 \
+          lzop \
+          m4 \
+          make \
+          makeself \
+          man-db \
+          manpages \
+          manpages-dev \
+          mawk \
+          mdadm \
+          meson \
+          mtd-utils \
+          mtools \
+          ncurses-base \
+          ncurses-bin \
+          ncurses-term \
+          net-tools \
+          ninja-build \
+          openssl \
+          perl \
+          python2 \
+          python2-dev \
+          python2-minimal \
+          python2.7 \
+          python2.7-dev \
+          python2.7-minimal \
+          python3 \
+          python3-pexpect \
+          python3-pip \
+          python3-pyinotify \
+          python3-pymacaroons \
+          python3-pyparsing \
+          python3-requests \
+          python3-texttable \
+          python3-venv \
+          python3.8 \
+          python3.8-dev \
+          python3.8-minimal \
+          python3.8-venv \
+          squashfuse \
+          texinfo \
+          u-boot-tools \
+          wget \
+          bc \
+          libssl-dev \
+          pkg-config \
+          gperf
+
+    - name: Lunch
+      run: echo ${{ matrix.lunch_option }} | ./build.sh lunch
+    
+    - name: build_all
+      run: ./build.sh
+
+    - name: Package and Upload Firmware
+      run: |
+        for dir in ${{github.workspace}}/IMAGE/*; do
+          firmware_name=$(basename $dir)
+          tar -czf $firmware_name.tar.gz -C $dir .
+          echo "Uploading $firmware_name.tar.gz..."
+          echo "::set-output name=firmware::$firmware_name.tar.gz"
+        done
+      id: package
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: firmware-artifacts
+        path: ${{ steps.package.outputs.firmware }}

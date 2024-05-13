@@ -1,0 +1,8 @@
+commit 39bc743a164a20ddfe7213375494d73fad819575
+Author: Yandong Lin <yandong.lin@rock-chips.com>
+Date:   Wed Jun 7 14:44:42 2023 +0800
+
+    [mpp]: fix some err log
+    
+    Signed-off-by: Yandong Lin <yandong.lin@rock-chips.com>
+    Change-Id: Id9e195280c999e2e50ad59e7ca3c35d918df3846

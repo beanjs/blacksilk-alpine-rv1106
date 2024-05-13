@@ -1,0 +1,8 @@
+commit bf8dc1b01f3e5ebdc0aca3113b602a30583ec0b8
+Author: whm <hanmei.weng@rock-chips.com>
+Date:   Tue Aug 22 12:53:51 2023 +0800
+
+    Ccm/Lsc: fix bug in interpolation calculation
+    
+    Change-Id: I59d495b299a6fd58d9bfffcb88f48e3750521b83
+    Signed-off-by: whm <hanmei.weng@rock-chips.com>

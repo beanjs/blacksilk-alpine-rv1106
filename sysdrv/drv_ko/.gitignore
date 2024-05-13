@@ -1,0 +1,10 @@
+*.cmd
+*.ko
+*.mod
+*.mod.c
+*.mod.o
+*.o
+*Module.symvers
+*modules.order
+*ssv_mod_conf.h
+out

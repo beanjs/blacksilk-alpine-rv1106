@@ -1,0 +1,8 @@
+commit e33bc4a25091b0e26c30ad6108f135c3326f76c5
+Author: cww <cww@rock-chips.com>
+Date:   Tue Aug 1 14:51:35 2023 +0800
+
+    CMakeLists.txt add RGA_ENABLE_INSTALL_SAMPLES
+    
+    Signed-off-by: cww <cww@rock-chips.com>
+    Change-Id: I7660eeb837448963df735aa2ddd7c9109ed0d130

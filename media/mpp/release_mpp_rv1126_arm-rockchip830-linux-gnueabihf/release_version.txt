@@ -1,0 +1,8 @@
+commit 8a54ab8d7dc697b4b20bcc5b2751deb5936ff0bd
+Author: xueman.ruan <xueman.ruan@rock-chips.com>
+Date:   Fri Jun 16 11:20:44 2023 +0800
+
+    [h264d]: fix the derivation of mbaff.
+    
+    Signed-off-by: xueman.ruan <xueman.ruan@rock-chips.com>
+    Change-Id: I3a119e2d9eb90158d837bd35b03d0d436425764e
