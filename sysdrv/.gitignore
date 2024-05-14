@@ -6,6 +6,8 @@ source/uboot/rkbin/tools/resource_tool
 source/busybox
 source/kernel/drv_ko/*
 
+tools/pc/toolkits/resource_tool
+
 tools/board/android-tools/android-tools
 tools/board/dosfstools/dosfstools-4.2
 tools/board/e2fsprogs/e2fsprogs-1.43.9
@@ -18,6 +20,6 @@ tools/board/stressapptest/stressapptest-master
 tools/board/toolkits/openssl/openssl-1.1.1h
 tools/board/toolkits/zlib/zlib-1.2.11
 tools/board/memtester/memtester-4.3.0
-tools/pc/toolkits/resource_tool
-
+tools/board/i2c-tools/i2c-tools-4.3
+tools/board/mtd-utils/mtd-utils-2.0.1
 # expat-2.4.1
