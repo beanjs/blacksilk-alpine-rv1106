@@ -31,7 +31,7 @@ download_image(){
   name=$(echo $2 | tr -d '\r')
 
   case $name in
-  env|idblock|uboot|boot|rootfs)
+  env|idblock|uboot|boot|rootfs|oem|userdata)
     $tool wl $addr ${dir}/$name.img
     ;;
   *);;
