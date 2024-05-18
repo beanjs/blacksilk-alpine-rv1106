@@ -2,6 +2,9 @@
 
 RV1106 1.6.0 SDK，支持sololinker-a开发板
 
+- [开箱](https://www.bilibili.com/video/BV1Dm411y7nM/?vd_source=4e6e40bc200c6fc912f05c90aa730d42)
+- [固件编译](https://www.bilibili.com/video/BV1wb42187Lj/?vd_source=4e6e40bc200c6fc912f05c90aa730d42)
+
 ## 启动容器
 
 ```bash
@@ -28,4 +31,11 @@ cd /home
 ./build.sh
 # 清除环境
 ./build.sh clean
+```
+
+## 固件下载
+
+```bash
+# 需要进入MaskRom模式
+./tools/downloader/rockchip.sh ./output/image
 ```
