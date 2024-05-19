@@ -35,7 +35,12 @@ cd /home
 
 ## 固件下载
 
+| 模式    | 文件                                              |
+| ------- | ------------------------------------------------- |
+| Maskrom | download.bin                                      |
+| Loader  | env.img idblock.img uboot.img boot.img rootfs.img |
+
 ```bash
-# 需要进入MaskRom模式
+# 需要进入MaskRom模式(仅支持linux和mac)
 ./tools/downloader/rockchip.sh ./output/image
 ```
