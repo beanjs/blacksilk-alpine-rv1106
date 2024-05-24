@@ -3,6 +3,7 @@
 os=$(uname -s)
 root=$(dirname $(realpath $0))
 dir=$1
+skip="${*:2}"
 
 case $os in
   Linux)
@@ -29,6 +30,11 @@ fi
 download_image(){
   addr=$1
   name=$(echo $2 | tr -d '\r')
+
+  if [[ $skip == *$name* ]]; then
+    echo "skip $name"
+    return
+  fi
 
   case $name in
   env|idblock|uboot|boot|rootfs|oem|userdata)
