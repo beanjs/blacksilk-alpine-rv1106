@@ -12,7 +12,7 @@ case $os in
   tool="sudo $tool"
   ;;
   Darwin)
-  tool=$root/drawin/upgrade_tool
+  tool=$root/darwin/upgrade_tool
   chmod +x $tool
   ;;
   *)
