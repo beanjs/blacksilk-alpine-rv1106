@@ -447,6 +447,7 @@ rootfs_prepare: prepare
 
 ifeq ($(RK_ROOTFS_TYPE), ubuntu)
 	@echo "RootFS type is Ubuntu"
+	@rm -rf $(SYSDRV_DIR)/tools/board/rootfs_ubuntu.tar.gz
 	@cat $(SYSDRV_DIR)/tools/board/rootfs_ubuntu.tar.gz* >> $(SYSDRV_DIR)/tools/board/rootfs_ubuntu.tar.gz
 	@tar -zxpf $(SYSDRV_DIR)/tools/board/rootfs_ubuntu.tar.gz -C $(SYSDRV_DIR_OUT_ROOTFS)
 	@rm -rf $(SYSDRV_DIR)/tools/board/rootfs_ubuntu.tar.gz
@@ -477,6 +478,8 @@ endif
 busybox_menuconfig:
 ifeq ($(RK_ROOTFS_TYPE), ubuntu)
 	@echo "RootFS type is Ubuntu skip..."
+else ifeq ($(RK_ROOTFS_TYPE), alpine)
+	@echo "RootFS type is Alpine skip..."
 else
 	@$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) menuconfig \
 		-C $(BUSYBOX_DIR)/$(BUSYBOX_VER)/
@@ -487,6 +490,8 @@ endif
 busybox: prepare
 ifeq ($(RK_ROOTFS_TYPE), ubuntu)
 	@echo "RootFS type is Ubuntu skip..."
+else ifeq ($(RK_ROOTFS_TYPE), alpine)
+	@echo "RootFS type is Alpine skip..."
 else
 	@echo -e "$(C_GREEN) ==sysdrv== build busybox   $(C_NORMAL)"
 	test -f $(BUSYBOX_DIR)/$(BUSYBOX_VER)/_install/bin/busybox  || (\
@@ -538,12 +543,19 @@ tools_board-builds:
 	@echo "RootFS type is Ubuntu, skip..."
 tools_board-clean:
 	@echo "RootFS type is Ubuntu, skip..."
+else ifeq ($(RK_ROOTFS_TYPE), alpine)
+tools_board-builds:
+	@echo "RootFS type is Alpine, skip..."
+tools_board-clean:
+	@echo "RootFS type is Alpine, skip..."
 else
 include $(SYSDRV_DIR)/tools/board/Makefile.tools.board.mk
 endif
 boardtools: tools_board-builds
 ifeq ($(RK_ROOTFS_TYPE), ubuntu)
 	@echo "RootFS type is Ubuntu, skip..."
+else ifeq ($(RK_ROOTFS_TYPE), alpine)
+	@echo "RootFS type is Alpine, skip..."
 else
 	@echo -e "$(C_GREEN) ==sysdrv== build tools which run on board   $(C_NORMAL)"
 endif
@@ -583,6 +595,8 @@ rootfs: rootfs_prepare pctools busybox boardtools drv
 	make -C $(SYSDRV_DIR) strip
 ifeq ($(RK_ROOTFS_TYPE), ubuntu)
 	pushd $(SYSDRV_DIR)/out;tar cf $(OUT_ROOTFS).tar $(OUT_ROOTFS);popd
+else ifeq ($(RK_ROOTFS_TYPE), alpine)
+	pushd $(SYSDRV_DIR)/out;tar cf $(OUT_ROOTFS).tar $(OUT_ROOTFS);popd
 else
 	pushd $(SYSDRV_DIR)/out;tar cf $(OUT_ROOTFS).tar $(OUT_ROOTFS);popd
 endif
@@ -598,6 +612,8 @@ endif
 strip:
 ifeq ($(RK_ROOTFS_TYPE), ubuntu)
 	@echo "RootFS type is Ubuntu, skip..."
+else ifeq ($(RK_ROOTFS_TYPE), alpine)
+	@echo "RootFS type is Alpine, skip..."
 else
 ifeq ($(SYSDRV_BUILD_VERSION),RELEASE)
 	@echo -e "$(C_GREEN) ==sysdrv== strip files of rootfs  $(C_NORMAL)"
