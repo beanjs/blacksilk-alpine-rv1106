@@ -1,8 +1,5 @@
 #! /bin/sh
 
-# docker run --rm --privileged multiarch/qemu-user-static --reset --persistent yes
-# docker run --rm -it --platform linux/arm/v7 -v ${root}:/home alpine:3.19
-
 root=$(dirname $(realpath $0))
 
 # 切换源

@@ -25,6 +25,8 @@ media_src := $(dir $(media_src))
 all:
 ifeq ($(RK_ROOTFS_TYPE), ubuntu)
 	@echo "RootFS type is Ubuntu. extract library only."
+else ifeq ($(RK_ROOTFS_TYPE), alpine)
+	@echo "RootFS type is Alpine. extract library only."
 else
 	@rm -rf $(RK_MEDIA_OUTPUT)
 	$(foreach target,$(media_src),make -C $(target)||exit -1;)

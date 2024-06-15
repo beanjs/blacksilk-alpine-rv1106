@@ -452,6 +452,13 @@ ifeq ($(RK_ROOTFS_TYPE), ubuntu)
 	@tar -zxpf $(SYSDRV_DIR)/tools/board/rootfs_ubuntu.tar.gz -C $(SYSDRV_DIR_OUT_ROOTFS)
 	@rm -rf $(SYSDRV_DIR)/tools/board/rootfs_ubuntu.tar.gz
 	@echo -e "$(C_GREEN) ==sysdrv== uncompress Ubuntu rootfs finished!   $(C_NORMAL)"
+else ifeq ($(RK_ROOTFS_TYPE), alpine)
+	@echo "RootFS type is Alpine"
+	@rm -rf $(SYSDRV_DIR)/tools/board/rootfs_alpine.tar.gz
+	@cat $(SYSDRV_DIR)/tools/board/rootfs_alpine.tar.gz* >> $(SYSDRV_DIR)/tools/board/rootfs_alpine.tar.gz
+	@tar -zxpf $(SYSDRV_DIR)/tools/board/rootfs_alpine.tar.gz -C $(SYSDRV_DIR_OUT_ROOTFS)
+	@rm -rf $(SYSDRV_DIR)/tools/board/rootfs_alpine.tar.gz
+	@echo -e "$(C_GREEN) ==sysdrv== uncompress Alpine rootfs finished!   $(C_NORMAL)"
 else
 	@echo "RootFS type is not Ubuntu. Proceeding with the build."
 	tar xf $(SYSDRV_DIR)/tools/board/rootfs_script.tar -C $(SYSDRV_DIR_OUT_ROOTFS)

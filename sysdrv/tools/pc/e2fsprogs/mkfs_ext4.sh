@@ -53,7 +53,7 @@ tune2fs -m 5  $dst
 echo "resize2fs -M $dst"
 resize2fs -M $dst
 
-if [ "$RK_ROOTFS_TYPE" == "ubuntu" ]; then
+if [ "$RK_ROOTFS_TYPE" == "ubuntu" -o "$RK_ROOTFS_TYPE" == "alpine" ]; then
 	echo "****** Fix rootfs file owner ****** "
     temp_mount=$(mktemp -d)
     mkdir -p "$temp_mount"

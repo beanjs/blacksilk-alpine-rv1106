@@ -21,6 +21,8 @@ all: $(pkg-build)
 ifeq ($(RK_ROOTFS_TYPE), ubuntu)
 	@echo "RootFS type is Ubuntu. building lvgl_demo only."
 	# make -C lvgl_app -j$(nproc) ||exit -1
+else ifeq ($(RK_ROOTFS_TYPE), alpine)
+	@echo "RootFS type is Alpine skip..."
 else
 	@echo "RootFS type is not Ubuntu. Proceeding with the build."
 	$(foreach target,$(app_src),make -C $(target)||exit -1;)
