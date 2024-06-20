@@ -2,8 +2,10 @@
 
 RV1106 1.6.0 SDK，支持sololinker-a开发板
 
-- [开箱](https://www.bilibili.com/video/BV1Dm411y7nM/?vd_source=4e6e40bc200c6fc912f05c90aa730d42)
-- [固件编译](https://www.bilibili.com/video/BV1wb42187Lj/?vd_source=4e6e40bc200c6fc912f05c90aa730d42)
+- [开箱](https://www.bilibili.com/video/BV1Dm411y7nM)
+- [固件编译](https://www.bilibili.com/video/BV1wb42187Lj)
+- [固件烧写](https://www.bilibili.com/video/BV16142117TV)
+- [提取文件系统](https://www.bilibili.com/video/BV1pi421i7hw)
 
 ## 启动容器
 
