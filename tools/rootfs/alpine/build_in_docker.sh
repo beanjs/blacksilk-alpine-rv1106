@@ -41,7 +41,8 @@ rm -rf ${root}/.rootfs/var/cache/apk/*
 
 # 导出文件系统
 echo export rootfs
-cd ${root}/.rootfs/ && tar czf rootfs_alpine.tar.gz *
+cd ${root}/.rootfs/ && tar czf rootfs_alpine.tar.gz * && mv rootfs_alpine.tar.gz ..
+rm -rf ${root}/.rootfs
 
 # 退出
-# exit
+exit
