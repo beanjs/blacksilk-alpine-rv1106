@@ -14,7 +14,7 @@ PKG_BIN := out
 
 M_OUT_DIR := $(CURRENT_DIR)/$(PKG_BIN)
 export M_OUT_DIR
-M_DIRS := rockit kmpp wifi motor
+M_DIRS := rockit kmpp motor
 ################################################################################
 ##  build target
 ################################################################################

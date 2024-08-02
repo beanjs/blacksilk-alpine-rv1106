@@ -3,6 +3,7 @@
 arch=$(uname -m)
 root=$(dirname $(realpath $0))
 sysdrv=$(dirname $(dirname $(dirname ${root})))/sysdrv
+alpine_version=3.19
  
 # 非ARM指令集需要开启虚拟化
 if [[ ! "${arch}" == arm* ]] ; then
@@ -10,7 +11,7 @@ if [[ ! "${arch}" == arm* ]] ; then
 fi
 
 # 创建 rootfs
-docker run --rm -it --platform linux/arm/v7 -v ${root}:/home alpine:3.19 /bin/ash /home/build_in_docker.sh
+docker run --rm -it --platform linux/arm/v7 -v ${root}:/home alpine:${alpine_version} /bin/ash /home/build_in_docker.sh
 
 # 切分 rootfs
 cd ${root} && split -b 50m -d rootfs_alpine.tar.gz rootfs_alpine.tar.gz
