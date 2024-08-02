@@ -22,7 +22,7 @@ export RK_UBOOT_DEFCONFIG=rv1106_defconfig
 export RK_UBOOT_DEFCONFIG_FRAGMENT=rk-emmc.config
 
 # Kernel defconfig
-export RK_KERNEL_DEFCONFIG=rv1106_linux_sololinker_defconfig
+export RK_KERNEL_DEFCONFIG=rv1106_alpine_sololinker_defconfig
 
 # Kernel dts
 export RK_KERNEL_DTS=rv1106g-hinlink-sololinker-a.dts
