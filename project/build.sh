@@ -1977,9 +1977,9 @@ function build_save(){
 	IMAGE_PATH=$RK_PROJECT_OUTPUT_IMAGE
 	DATE=$(date  +%Y%m%d.%H%M)
     if [ -n "$RK_ROOTFS_TYPE" ];then
-        STUB_PATH=Image/"${RK_BOOT_MEDIUM}_$RK_KERNEL_DTS"_"${RK_ROOTFS_TYPE}"_"$DATE"_RELEASE_TEST
+        STUB_PATH=Image/"${RK_BOOT_MEDIUM}"_"${RK_ROOTFS_TYPE}"_"$DATE"_RELEASE_TEST
     else
-        STUB_PATH=Image/"${RK_BOOT_MEDIUM}_$RK_KERNEL_DTS"_"$DATE"_RELEASE_TEST
+        STUB_PATH=Image/"${RK_BOOT_MEDIUM}"_BUILDROOT_"$DATE"_RELEASE_TEST
     fi
 	STUB_PATH="$(echo $STUB_PATH | tr '[:lower:]' '[:upper:]')"
 	export STUB_PATH=$SDK_ROOT_DIR/$STUB_PATH
