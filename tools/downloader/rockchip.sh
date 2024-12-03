@@ -37,7 +37,7 @@ download_image(){
   fi
 
   case $name in
-  env|idblock|uboot|boot|rootfs|oem|userdata)
+  env|idblock|uboot|boot|rootfs|oem|userdata|media)
     $tool wl $addr ${dir}/$name.img
     ;;
   *);;

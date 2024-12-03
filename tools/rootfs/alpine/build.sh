@@ -4,7 +4,7 @@ arch=$(uname -m)
 root=$(dirname $(realpath $0))
 sysdrv=$(dirname $(dirname $(dirname ${root})))/sysdrv
 alpine_version=3.20
- 
+
 # 非ARM指令集需要开启虚拟化
 if [[ ! "${arch}" == arm* ]] ; then
   docker run --rm --privileged multiarch/qemu-user-static --reset --persistent yes

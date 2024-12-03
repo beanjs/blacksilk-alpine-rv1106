@@ -1,0 +1,7 @@
+#!/sbin/openrc-run
+
+description="linkmount"
+
+start_pre() {
+	/etc/init.d/S20linkmount start
+}
