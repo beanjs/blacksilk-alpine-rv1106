@@ -27,7 +27,7 @@ rc-update add cgroups boot
 rc-update add devfs boot
 rc-update add procfs boot
 rc-update add sysfs boot
-rc-update add linkmount boot
+rc-update add linkmount default
 rc-update add networking default
 rc-update add sshd default
 rc-update add openntpd default
