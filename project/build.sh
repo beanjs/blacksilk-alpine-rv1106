@@ -1387,7 +1387,7 @@ if [ -z "\$1" -o -z "\$2" -o -z "\$3" ];then
 	echo "Invalid paramter, exit !!!"
 	exit 1
 fi
-root_dev=\$(mountpoint -n /)
+root_dev=\$(mount | grep ' / ' | awk '{print \$1}')
 root_dev=\${root_dev%% *}
 partname=\$1
 part_dev=/dev/block/by-name/\$1
@@ -1415,7 +1415,7 @@ case \$bootmedium in
 			mount -t \$part_fstype \$part_dev \$mountpt
 			if [ \$? -eq 0 ]; then
 				resize2fs \$part_dev
-				tune2fs \$part_dev -L \$partname
+				tune2fs -L \$partname \$part_dev
 			else
 				echo "mount \$partname error, try to format..."
 				mke2fs -F -L \$partname \$part_dev  && \
